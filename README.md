@@ -30,10 +30,12 @@ echo node_modules >> .gitignore
 Babel  (babel-cli)
   babel-preset-es2015
   babel-preset-react
+  babel-loader
 
 Webpack
 
-
+React
+  React-dom
 
 
 
