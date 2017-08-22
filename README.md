@@ -1,42 +1,22 @@
-#Initial Setup
-Mkdir <app name> && cd <app name>
-Git init
+# react-calculator
 
-Touch package.json
-Fill with code
+This is a simple Calculator written using Node and React. It was written as a guide to following this [tutorial]().
 
-Touch .babelrc
-Fill with code
+## Getting Started
 
-mkdir server && cd server
-touch server.js
-Fill with code
+To try out the project on your development machine, just clone the project, navigate into the folder in which the project was cloned and run the following command
+```
+npm install && npm start
+```
 
-mkdir public && cd public
-touch index.html
-fill with code
+### Prerequisites
 
-npm install
+This app requires the [Node](https://nodejs.org/) installed on your development machine.
 
-echo node_modules >> .gitignore
+## Author
 
+* **Azeez Olaniran**
 
+## License
 
-
-
-
-
-#Packages included
-Babel  (babel-cli)
-  babel-preset-es2015
-  babel-preset-react
-  babel-loader
-
-Webpack
-
-React
-  React-dom
-
-
-
-#Other
+This project is licensed under the MIT License
