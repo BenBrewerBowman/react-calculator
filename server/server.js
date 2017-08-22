@@ -43,40 +43,40 @@ function requestHandler(request, response) {
       "binary", // read the requested resource as a binary file
       function(err, file) { // call back function to handle end of file reading
 
-      // If an error occured while reading the file, send the error message
-      // with a status code of 500 (Internal server error)
-      if (err) {
-        response.writeHead(500, {"Content-Type": "text/plain"});
-        response.write(err + "\n");
-        response.end();
-        return;
-      }
+        // If an error occured while reading the file, send the error message
+        // with a status code of 500 (Internal server error)
+        if (err) {
+          response.writeHead(500, {"Content-Type": "text/plain"});
+          response.write(err + "\n");
+          response.end();
+          return;
+        }
 
-      // Helper object to map requested content types (extension) to response
-      // mime types
-      const contentTypesByExtension = {
-        '.html': "text/html",
-        '.css':  "text/css",
-        '.js':   "text/javascript"
-      };
+        // Helper object to map requested content types (extension) to response
+        // mime types
+        const contentTypesByExtension = {
+          '.html': "text/html",
+          '.css':  "text/css",
+          '.js':   "text/javascript"
+        };
 
-      // Helper object to hold our headers
-      const headers = {};
-      // get the content type using the requested resource file extension
-      const contentType = contentTypesByExtension[
-        path.extname(requestedResource)
-      ];
+        // Helper object to hold our headers
+        const headers = {};
+        // get the content type using the requested resource file extension
+        const contentType = contentTypesByExtension[
+          path.extname(requestedResource)
+        ];
 
-      // if the requested resource maps to any of our content type extension,
-      // then set the Content-Type field for our response headers.
-      if (contentType) {
-        headers["Content-Type"] = contentType;
-      }
+        // if the requested resource maps to any of our content type extension,
+        // then set the Content-Type field for our response headers.
+        if (contentType) {
+          headers["Content-Type"] = contentType;
+        }
 
-      response.writeHead(200, headers); // write response header (if any)
-      response.write(file, "binary"); // write content of read file (binary format)
-      response.end(); // send response and close request
-    });
+        response.writeHead(200, headers); // write response header (if any)
+        response.write(file, "binary"); // write content of read file (binary format)
+        response.end(); // send response and close request
+      });
 
   });
 }

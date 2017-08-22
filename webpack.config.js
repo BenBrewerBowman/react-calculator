@@ -16,14 +16,14 @@ const config = {
       {
         // check for files ending with  .css (uses Regex)
         test: /\.css$/,
-         // use these loaders of .css files. 'css-loader gets run first and is
-         // used to handle the imports of our css files inside our jsx files.
-         // The style loader then mounts our css in to the DOM
+        // use these loaders of .css files. 'css-loader gets run first and is
+        // used to handle the imports of our css files inside our jsx files.
+        // The style loader then mounts our css in to the DOM
         loaders: ['style-loader', 'css-loader']
       }
     ]
   }
-};
+}
 
 // export our config object.
 // You may have noticed we are using es5 syntax here. This is because Webpack, which would be using this
